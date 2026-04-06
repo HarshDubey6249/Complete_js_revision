@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>YouTube Subscribe button</p>
+  <button class="js-button1" onclick=" fun()"">Subscribe</button> <h5>0</h5>
+
+
+    <h5>  Amazon Shipping  Calculator</h5>
+    <p>Orders under $40= +$10 shipping.</p>
+<p> Orders over $40 = FREE shipping</p>
+
+<input type=" number" name="cals" id="js-A-cals" placeholder="Cost of order"
+ onkeydown="handeleCostKeyDown()">
+    <button onclick="calculateTotal();"> Calculate</button>
+
+    <p class="js-finalPrice"></p>
+
+
+    <script>
+     
+     function handeleCostKeyDown(){
+console.log(event.key);
+if( event.key==='Enter'){
+  calculateTotal();55n
+}
+     }
+      const docs = document.querySelector(".js-button1");
+      const subs = document.querySelector("h5");
+      var score = 0
+      function fun() {
+        if (docs.innerHTML === "Subscribe") {
+          docs.innerHTML = "Subscribed";
+          score = score + 1;
+          subs.innerHTML = score;
+        } else {
+          docs.innerHTML = "Subscribe"
+          score = score - 1;
+          subs.innerHTML = score;
+        }
+      }
+
+
+
+      //Amazon logic
+
+      function calculateTotal() {
+        const inputElement = document.querySelector("#js-A-cals").value;
+        let cost = Number(inputElement);
+
+        if (cost < 40) {
+
+          cost = cost + 10;
+          //console.log(ans);
+        }
+        document.querySelector(".js-finalPrice").innerHTML = `$ ${cost}`;
+      }
+    </script>
+
+</body>
+
+</html>
