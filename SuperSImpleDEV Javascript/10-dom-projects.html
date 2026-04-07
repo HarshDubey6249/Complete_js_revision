@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+
+            font-family: Arial;
+        }
+
+        .subscribe-button {
+            border: none;
+            border-radius: 20px;
+            background-color: black;
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: bottom 30pxs; ;
+
+        }
+
+
+        .is-Subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+
+
+        /* ⁡⁢⁣⁣𝗔𝗺𝗮𝘇𝗼𝗻 𝘀𝘁𝘆𝗹𝗶𝗻𝗴 ⁡*/
+
+        .cost-input{
+            font-size: 15px;
+            padding-top:10px ;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-radius: 10px;
+        }
+
+        .calculate-button{
+
+            padding: 10px 15px;
+            background-color: #3aff3a;
+            border-radius: 10px ;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>YouTube Subscribe button</p>
+    <button class="js-button1 subscribe-button " onclick=" fun()"">Subscribe</button> <h5>0</h5>
+
+
+    <h5>  Amazon Shipping  Calculator</h5>
+    <p>Orders under $40= +$10 shipping.</p>
+<p> Orders over $40 = FREE shipping</p>
+
+<input type=" number" name="cals" id="js-A-cals"
+ placeholder="Cost of order" 
+onkeydown="handeleCostKeyDown()" class="cost-input">
+        <button onclick="calculateTotal();" class="calculate-button"  > Calculate</button>
+
+        <p class="js-finalPrice"></p>
+
+
+        <script>
+
+            function handeleCostKeyDown() {
+                
+                if (event.key === 'Enter') {
+                    calculateTotal();
+                }
+            }
+            const docs = document.querySelector(".js-button1");
+            const subs = document.querySelector("h5");
+            var score = 0
+            function fun() {
+                if (docs.innerHTML === "Subscribe") {
+                    docs.innerHTML = "Subscribed";
+                    score = score + 1;
+
+                    subs.innerHTML = score;
+                    docs.classList.add('is-Subscribed');
+                } else {
+                    docs.innerHTML = "Subscribe"
+                    score = score - 1;
+                    subs.innerHTML = score;
+                    docs.classList.remove('is-Subscribed');
+                }
+            }
+
+
+
+
+            //Amazon logic
+
+            function calculateTotal() {
+                const inputElement = document.querySelector("#js-A-cals").value;
+                let cost = Number(inputElement);
+
+                if (cost < 40) {
+
+                    cost = cost + 10;
+                    //console.log(ans);
+                }
+                document.querySelector(".js-finalPrice").innerHTML = `$ ${cost}`;
+            }
+        </script>
+
+</body>
+
+</html>

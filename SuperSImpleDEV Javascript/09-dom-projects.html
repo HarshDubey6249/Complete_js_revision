@@ -16,21 +16,20 @@
     <p>Orders under $40= +$10 shipping.</p>
 <p> Orders over $40 = FREE shipping</p>
 
-<input type=" number" name="cals" id="js-A-cals" placeholder="Cost of order"
- onkeydown="handeleCostKeyDown()">
+<input type=" number" name="cals" id="js-A-cals" placeholder="Cost of order" onkeydown="handeleCostKeyDown()">
     <button onclick="calculateTotal();"> Calculate</button>
 
     <p class="js-finalPrice"></p>
 
 
     <script>
-     
-     function handeleCostKeyDown(){
-console.log(event.key);
-if( event.key==='Enter'){
-  calculateTotal();55n
-}
-     }
+
+      function handeleCostKeyDown() {
+        console.log(event.key);
+        if (event.key === 'Enter') {
+          calculateTotal(); 
+        }
+      }
       const docs = document.querySelector(".js-button1");
       const subs = document.querySelector("h5");
       var score = 0
