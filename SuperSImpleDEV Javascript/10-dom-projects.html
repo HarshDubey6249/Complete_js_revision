@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dom-project</title>
 
     <style>
         body {
@@ -108,13 +108,17 @@ onkeydown="handeleCostKeyDown()" class="cost-input">
                 const inputElement = document.querySelector("#js-A-cals").value;
                 let cost = Number(inputElement);
 
-                if (cost < 40) {
+                if (cost < 40 && cost !==null) {
 
+                  
+   
                     cost = cost + 10;
                     //console.log(ans);
                 }
+                
                 document.querySelector(".js-finalPrice").innerHTML = `$ ${cost}`;
             }
+        
         </script>
 
 </body>
