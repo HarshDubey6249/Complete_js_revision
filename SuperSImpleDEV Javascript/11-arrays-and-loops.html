@@ -6,14 +6,32 @@
     <title>Arrays-and-Loops</title>
   </head>
   <body>
-
     <script>
-        const myarr=[1,2,3,4];
+      /* const myarr=[1,2,3,4];
         console.log(myarr)
         console.log(Array.isArray([1,2]));
        console.log(typeof(myarr));
        console.log(myarr.splice(1,2));
        console.log(myarr)
+       */
+
+          const arr = [1, 2, 3];
+          const arr2 = arr.slice();
+          arr2.push(4);
+          console.log(arr);
+          console.log(arr2);
+
+          const arr3 = [1, 2, 3];
+
+          for (let i = 0; i < 10; i++) {
+            if (i % 3 == 0) {
+              continue;
+            }
+            console.log(i);
+            if (i === 8) {
+              break;
+            }
+          }
     </script>
   </body>
 </html>
